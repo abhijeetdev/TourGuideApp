@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TourGuideApp</string>
+    <string name="title">Things to do in Amravati</string>
+    <string name="landmark_image_view_descripsion">landmark image</string>
+</resources>

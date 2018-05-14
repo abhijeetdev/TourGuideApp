@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_view_width">100dp</dimen>
+    <dimen name="image_view_height">100dp</dimen>
+    <dimen name="item_title_text_view_size">20sp</dimen>
+</resources>
