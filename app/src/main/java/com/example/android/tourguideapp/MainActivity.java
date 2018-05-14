@@ -2,7 +2,6 @@ package com.example.android.tourguideapp;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPageAdapter viewPageAdapter = new ViewPageAdapter(getSupportFragmentManager());
         viewPageAdapter.addFragment(new LandmarkFragment(), "Landmarks");
         viewPageAdapter.addFragment(new NatureFragment(), "Natures");
-        viewPageAdapter.addFragment(new ShoppingFragment(), "Shopping");
+        viewPageAdapter.addFragment(new RestaurantsFragment(), "Restaurants");
 
         viewPager.setAdapter(viewPageAdapter);
         tabLayout.setupWithViewPager(viewPager);

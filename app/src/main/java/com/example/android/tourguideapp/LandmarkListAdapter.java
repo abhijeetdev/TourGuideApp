@@ -34,13 +34,13 @@ public class LandmarkListAdapter extends ArrayAdapter<Landmark> {
         Landmark currentLandmark = getItem(position);
 
         TextView titleTextView = (TextView)convertView.findViewById(R.id.itemTitleTextView);
-        titleTextView.setText("Rajkamal Square");
+        titleTextView.setText(currentLandmark.getTitle());
 
         TextView  durationTextView = (TextView)convertView.findViewById(R.id.itemDescriptionTextView);
-        durationTextView.setText("Rajkamal Square was named after the famous Rajkamal Theater, where the plays were staged those days. Now we have a Cenema Theater at that place. This place is the heart of the city and hub of all social and political activities right from preindependence days.");
+        durationTextView.setText(currentLandmark.getDescription());
 
         ImageView imageView = (ImageView)convertView.findViewById(R.id.itmeImageView);
-        imageView.setImageResource(R.drawable.rajkalam_square);
+        imageView.setImageResource(currentLandmark.getImageResourceId());
         return convertView;
 
     }
