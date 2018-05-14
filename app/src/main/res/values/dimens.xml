@@ -3,4 +3,12 @@
     <dimen name="image_view_width">100dp</dimen>
     <dimen name="image_view_height">100dp</dimen>
     <dimen name="item_title_text_view_size">20sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="detail_image_view_height">300dp</dimen>
+    <dimen name="detail_description_text_size">18sp</dimen>
+    <dimen name="auto_detail_text_size_max_size">20sp</dimen>
+    <dimen name="auto_min_description_text_view_size">12sp</dimen>
+    <dimen name="basic_layout_margin">8dp</dimen>
+    <dimen name="zero_size">0dp</dimen>
+    <dimen name="app_bar_layout_height">150dp</dimen>
 </resources>
