@@ -6,27 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.tourguideapp.DetailActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/zero_size"
         android:layout_height="@dimen/detail_image_view_height"
         android:layout_marginEnd="@dimen/basic_layout_margin"
         android:layout_marginStart="@dimen/basic_layout_margin"
-        android:layout_marginTop="@dimen/basic_layout_margin"
         android:contentDescription="@string/landmark_image_view_descripsion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@android:drawable/button_onoff_indicator_off" />
+        app:srcCompat="@android:drawable/button_onoff_indicator_off"
+        tools:layout_editor_absoluteY="64dp" />
 
     <TextView
         android:id="@+id/decriptionTextView"

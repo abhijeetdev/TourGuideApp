@@ -1,11 +1,13 @@
 package com.example.android.tourguideapp;
 
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,16 +27,25 @@ public class NatureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.nature_fragment, container, false);
 
-        ArrayList<Landmark> landmarkList = new ArrayList<>();
-        landmarkList.add(new Landmark("MelGhat Tiger Reserve","Melghat tiger reserve is great place to visit and have a close encounter with nature with beautiful roads and pleasant wether with variety of animals u can also visit a hill station chikhaldara to enjoy sunsets and beautiful whether.", R.drawable.melghat_tiger_reserve));
-        landmarkList.add(new Landmark("Gavilgarh Fort","Gawilgadh Fort is situated at Chikhaldara hill station. Fort built in 1200 century went in the hands of Mughals for 260 years and then with British.It is property maintained by archeological serve Department of India. This fort have very large area and its internal planing is a good sample of security measures that time was taken. There is a palace and a tank inside. It's a good place to visit.", R.drawable.gavilgarh_fort));
-        landmarkList.add(new Landmark("Bamboo Garden","This is first 'bamboo garden' of india in Amravati City. Amaravati residents will enjoy touring in this bamboo forest and this garden.Maharashtra is the highest bamboo growing State and its largest and most famous bamboo nursery is known as Vadali. Vadali lake and nearby areas with hillocks are located at a small distance from Amaravati city and this is a forest area. It is where Vadali bamboo nursery is located.", R.drawable.bamboo_garden));
-        landmarkList.add(new Landmark("Upper Wardha Dam","This dam is located at Simbhora village near Morshi. It's approximately 60 km away from Amravati. It's major dam and lifeline of Amravati. It is mostly visited by peoples during rainy season and specially when its overflowing.", R.drawable.upper_wardha_dam));
-        landmarkList.add(new Landmark("Wadali Talao","Wadali lake garden or Wadali talao is the only place in Amravati city where one can spend time with family and kids. This place is well connected with roads and its not far from city or almost in the city and one can go by autoriksha and bus.", R.drawable.wadali_lake_garden));
+        final ArrayList<Landmark> landmarkList = new ArrayList<>();
+        landmarkList.add(new Landmark(getString(R.string.melghat), getString(R.string.melghat_desc), R.drawable.melghat_tiger_reserve));
+        landmarkList.add(new Landmark(getString(R.string.fort), getString(R.string.fort_desc), R.drawable.gavilgarh_fort));
+        landmarkList.add(new Landmark(getString(R.string.bamboo_garden), getString(R.string.bamboo_garden_desc), R.drawable.bamboo_garden));
+        landmarkList.add(new Landmark(getString(R.string.upper_wardha_dam), getString(R.string.upper_wardha_dam_desc), R.drawable.upper_wardha_dam));
+        landmarkList.add(new Landmark(getString(R.string.wadali_talao), getString(R.string.wadali_talao_desc), R.drawable.wadali_lake_garden));
 
         NatureListAdapter adapter = new NatureListAdapter(getContext(), landmarkList);
         ListView natureListView = (ListView) view.findViewById(R.id.natureListView);
         natureListView.setAdapter(adapter);
+
+        natureListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                intent.putExtra(Constants.SELECTED_LANDMARK, landmarkList.get(i));
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }
